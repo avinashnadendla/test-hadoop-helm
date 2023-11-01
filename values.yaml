@@ -6,8 +6,6 @@ image:
 hadoopVersion: 3.3.2
 logLevel: INFO
 
-antiAffinity: "soft"
-
 yarn:
   resourceManager:
 
@@ -33,16 +31,3 @@ yarn:
       limits:
         memory: "2048Mi"
         cpu: "1000m"
-
-persistence:
-  nameNode:
-    enabled: true
-    storageClass: gp3
-    accessMode: ReadWriteOnce
-    size: 50Gi
-
-  dataNode:
-    enabled: true
-    storageClass: "-"
-    accessMode: ReadWriteOnce
-    size: 200Gi
