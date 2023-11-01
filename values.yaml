@@ -1,0 +1,48 @@
+image:
+  repository: "apache/hadoop"
+  tag: 3.3.6
+  pullPolicy: IfNotPresent
+
+hadoopVersion: 3.3.2
+logLevel: INFO
+
+antiAffinity: "soft"
+
+yarn:
+  resourceManager:
+
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "10m"
+      limits:
+        memory: "2048Mi"
+        cpu: "2000m"
+
+  nodeManager:
+
+    # The number of YARN NodeManager instances.
+    replicas: 1
+
+    # CPU and memory resources allocated to each node manager pod.
+    # This should be tuned to fit your workload.
+    resources:
+      requests:
+        memory: "2048Mi"
+        cpu: "1000m"
+      limits:
+        memory: "2048Mi"
+        cpu: "1000m"
+
+persistence:
+  nameNode:
+    enabled: true
+    storageClass: gp3
+    accessMode: ReadWriteOnce
+    size: 50Gi
+
+  dataNode:
+    enabled: true
+    storageClass: "-"
+    accessMode: ReadWriteOnce
+    size: 200Gi
