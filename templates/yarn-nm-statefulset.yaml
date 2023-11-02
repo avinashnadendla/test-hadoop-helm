@@ -51,7 +51,7 @@ spec:
       volumes:
        - name: yarn-conf
          configMap:
+          name: yarn-conf
           items:
            - key: yarn-site.xml
              path: yarn-site.xml
-
