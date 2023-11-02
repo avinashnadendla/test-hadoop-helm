@@ -9,11 +9,13 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/component: yarn-rm
 spec:
-  type: NodePort
   ports:
   - port: 8088
-    nodePort: 30036
     name: web
+  - port: 8090
+    name: web-https
+  - port: 8031
+    name: resource-tracker
   selector:
     app.kubernetes.io/name: {{ include "hadoop.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

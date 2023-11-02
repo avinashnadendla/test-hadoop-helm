@@ -9,17 +9,14 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/component: yarn-nm
 spec:
-  type: NodePort
   ports:
   - port: 8088
     name: web
-    nodePort: 30037
   - port: 8082
     name: web2
-    nodePort: 30038
   - port: 8042
     name: api
-    nodePort: 30039
+  clusterIP: None
   selector:
     app.kubernetes.io/name: {{ include "hadoop.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

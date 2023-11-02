@@ -27,6 +27,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         command: ["yarn", "nodemanager"]
+        volumeMounts:
+        - name: yarn-conf
+          mountPath: /opt/hadoop/etc/hadoop/
         ports:
         - containerPort: 8088
           name: web
@@ -45,3 +48,10 @@ spec:
               containerName: yarn-nm
               resource: limits.memory
               divisor: 1M
+      volumes:
+       - name: yarn-conf
+         configMap:
+          items:
+           - name: yarn-site.xml
+           - key: yarn-site.xml
+
