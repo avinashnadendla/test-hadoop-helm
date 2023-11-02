@@ -30,6 +30,7 @@ spec:
         volumeMounts:
         - name: yarn-conf
           mountPath: /opt/hadoop/etc/hadoop/yarn-site.xml
+          subPath: yarn-site.xml
         ports:
         - containerPort: 8088
           name: web
@@ -52,6 +53,3 @@ spec:
        - name: yarn-conf
          configMap:
           name: yarn-conf
-          items:
-           - key: yarn-site.xml
-             path: yarn-site.xml
