@@ -36,19 +36,6 @@ spec:
           name: web
         resources:
 {{ toYaml .Values.yarn.nodeManager.resources | indent 10 }}
-        env:
-        - name: MY_CPU_LIMIT
-          valueFrom:
-            resourceFieldRef:
-              containerName: yarn-nm
-              resource: limits.cpu
-              divisor: 1
-        - name: MY_MEM_LIMIT
-          valueFrom:
-            resourceFieldRef:
-              containerName: yarn-nm
-              resource: limits.memory
-              divisor: 1M
       volumes:
        - name: yarn-conf
          configMap:
