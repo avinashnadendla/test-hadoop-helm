@@ -29,7 +29,7 @@ spec:
         command: ["yarn", "nodemanager"]
         volumeMounts:
         - name: yarn-conf
-          mountPath: /opt/hadoop/etc/hadoop/
+          mountPath: /opt/hadoop/etc/hadoop/yarn-site.xml
         ports:
         - containerPort: 8088
           name: web
