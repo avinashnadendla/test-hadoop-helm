@@ -26,6 +26,7 @@ spec:
       - name: yarn-nm
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        command: ["yarn", "nodemanager"]
         ports:
         - containerPort: 8088
           name: web
