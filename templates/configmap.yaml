@@ -10,15 +10,15 @@ data:
     <!-- Site specific YARN configuration properties -->
      <property>
         <name>yarn.resourcemanager.webapp.address</name>
-        <value>resourcemanager:8088</value>
+        <value>hadoop-hadoop-yarn-rm:8088</value>
      </property>
      <property>
         <name>yarn.resourcemanager.webapp.https.address</name>
-        <value>resourcemanager:8090</value>
+        <value>hadoop-hadoop-yarn-rm:8090</value>
      </property>
      <property>
         <name>yarn.resourcemanager.resource-tracker.address</name>
-        <value>resourcemanager:8031</value>
+        <value>hadoop-hadoop-yarn-rm:8031</value>
      </property>
 
     </configuration>
