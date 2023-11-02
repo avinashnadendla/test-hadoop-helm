@@ -52,6 +52,6 @@ spec:
        - name: yarn-conf
          configMap:
           items:
-           - name: yarn-site.xml
-             key: yarn-site.xml
+           - key: yarn-site.xml
+             path: yarn-site.xml
 
