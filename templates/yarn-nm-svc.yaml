@@ -16,7 +16,6 @@ spec:
     name: web2
   - port: 8042
     name: api
-  clusterIP: None
   selector:
     app.kubernetes.io/name: {{ include "hadoop.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
